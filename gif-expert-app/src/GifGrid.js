@@ -1,0 +1,38 @@
+import React, { useEffect, useState } from 'react'
+
+export const GifGrid = ({ category }) => {
+
+    const [images, setImages] = useState([])
+
+    useEffect(() => {
+        getGifs();
+    }, [])
+    
+
+    const getGifs = async () => {
+        const url = 'https://api.giphy.com/v1/gifs/search?api_key=iXsYNn6eQSpxVoN6YfKSRVojGM1eOS5e&q=GFRIEND&limit=10'
+        const resp = await fetch(url)
+        const { data } = await resp.json() 
+        const gifs = data.map( img => {
+
+            console.log(img)
+            return {
+                id: img.id,
+                title: img.title,
+                url: img.images?.downsized_medium.url
+            }
+        })
+         setImages(gifs)
+    } 
+
+    return (
+        <div>
+            <h3> {category} </h3>
+            <ol>
+               {images.map((image) => 
+                    <li> {image.title} </li>
+               )} 
+            </ol>
+        </div>
+    )
+}
