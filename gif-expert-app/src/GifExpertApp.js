@@ -4,7 +4,7 @@ import { GifGrid } from './GifGrid';
 
 function GifExpertApp(props) {
 
-    const [categories, setCategories] = useState(['Naruto', 'Samurai X', 'Digimon'])
+    const [categories, setCategories] = useState(['GFRIEND'])
 
     /* const handleAdd = () => { 
         const newElement = 'Pokemon'; 
@@ -13,7 +13,7 @@ function GifExpertApp(props) {
 
     return (
         <>
-          <h2>GifExpertApp</h2>  
+          <h2>GifExpertApp - Milumon</h2>  
           <AddCategory setCategories={ setCategories } />
           <hr />
 

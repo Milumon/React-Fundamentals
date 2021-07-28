@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { GifGridItem } from './GifGridItem';
 
 export const GifGrid = ({ category }) => {
 
@@ -13,9 +14,7 @@ export const GifGrid = ({ category }) => {
         const url = 'https://api.giphy.com/v1/gifs/search?api_key=iXsYNn6eQSpxVoN6YfKSRVojGM1eOS5e&q=GFRIEND&limit=10'
         const resp = await fetch(url)
         const { data } = await resp.json() 
-        const gifs = data.map( img => {
-
-            console.log(img)
+        const gifs = data.map( img => { 
             return {
                 id: img.id,
                 title: img.title,
@@ -30,8 +29,11 @@ export const GifGrid = ({ category }) => {
             <h3> {category} </h3>
             <ol>
                {images.map((image) => 
-                    <li> {image.title} </li>
-               )} 
+
+                    <GifGridItem 
+                    { ...image }
+                    key={image.id} />
+                )} 
             </ol>
         </div>
     )
