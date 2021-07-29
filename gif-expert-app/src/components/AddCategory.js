@@ -14,9 +14,14 @@ export const AddCategory = ({ setCategories }) => {
         
        e.preventDefault()
 
+       console.log('handleSubmit ', 'INPUTVLAUE: ', inputValue)
+
         if (inputValue.trim().length > 2){
             setCategories((e) => [inputValue, ...e])
             setInputValue('')
+
+           // console.log('handleSubmit ', 'INPUTVLAUE vacio: ', inputValue)
+
         }
     }
 
