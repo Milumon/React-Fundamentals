@@ -1,27 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`El component se debe mostrar Debe de mostrar items cuando se cargan las imagenes useFetchGifs 1`] = `
-<Fragment>
-  <h3
-    className="animate__animated animate__fadeIn"
-  >
-     
-    GFRIEND
-     
-  </h3>
-  <div
-    className="card-grid"
-  >
-    <GifGridItem
-      id="ABC"
-      key="ABC"
-      title="Mi imagensita"
-      url="http://localhost/cualquiercosa.jpg"
-    />
-  </div>
-</Fragment>
-`;
-
 exports[`El component se debe mostrar El componente debe coincidir con el snapshot 1`] = `
 <Fragment>
   <h3
