@@ -5,11 +5,11 @@ import { AddCategory } from '../../components/AddCategory';
 describe('Test de AddCategory', () => {
 
     const setCategories = () => {}
+    const wrapper = shallow( <AddCategory setCategories={setCategories} /> )
 
     test('Debe de mostrarse el component', () => {
 
-        const wrapper = shallow( <AddCategory setCategories={setCategories} /> )
-        expect(wrapper).toMatchSnapshot();
+         expect(wrapper).toMatchSnapshot();
         
     });
 
@@ -20,7 +20,7 @@ describe('Test de AddCategory', () => {
 
         input.simulate('change', { target: {value} } )
 
-        expect(wrapper.)
+         expect( wrapper.find('h1').text().trim() ).toBe(value)
         
     })
     
